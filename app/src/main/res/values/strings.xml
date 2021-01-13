@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">Perfumery Scores</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_input">Input</string>
+    <string name="title_players">Players</string>
+    <string name="title_histories">Histories</string>
+    <string name="player_name">name</string>
+    <string name="p1">P1</string>
+    <string name="p2">P2</string>
+    <string name="p3">P3</string>
+    <string name="p4">P4</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_14">14</string>
+    <string name="_15">15</string>
+    <string name="clear">Clear</string>
+    <string name="_0">0</string>
+    <string name="save">Save</string>
+    <string name="point">p</string>
+    <string name="rank_suffix">.</string>
 </resources>

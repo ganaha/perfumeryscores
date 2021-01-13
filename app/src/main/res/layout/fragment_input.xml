@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.perfumeryscores.ui.input.InputViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.input.InputFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Player Name -->
+
+            <AutoCompleteTextView
+                android:id="@+id/editTextP1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:autofillHints="personName"
+                android:gravity="center"
+                android:hint="@string/p1"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:text="@={vm.nameP1}"
+                android:textSize="@dimen/text_size_player_name"
+                app:layout_constraintEnd_toStartOf="@+id/editTextP2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <AutoCompleteTextView
+                android:id="@+id/editTextP2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:autofillHints="personName"
+                android:gravity="center"
+                android:hint="@string/p2"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:text="@={vm.nameP2}"
+                android:textSize="@dimen/text_size_player_name"
+                app:layout_constraintEnd_toStartOf="@+id/editTextP3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/editTextP1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <AutoCompleteTextView
+                android:id="@+id/editTextP3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:autofillHints="personName"
+                android:gravity="center"
+                android:hint="@string/p3"
+                android:inputType="textPersonName"
+                android:text="@={vm.nameP3}"
+                android:textSize="@dimen/text_size_player_name"
+                app:layout_constraintEnd_toStartOf="@+id/editTextP4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/editTextP2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <AutoCompleteTextView
+                android:id="@+id/editTextP4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:autofillHints="personName"
+                android:gravity="center"
+                android:hint="@string/p4"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:text="@={vm.nameP4}"
+                android:textSize="@dimen/text_size_player_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/editTextP3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Button 2 -->
+
+            <Button
+                android:id="@+id/button2P1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick2P1() }"
+                android:text='@{"2 x " + Integer.toString(vm.count2P1)}'
+                app:layout_constraintEnd_toStartOf="@+id/button2P2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextP1" />
+
+            <Button
+                android:id="@+id/button2P2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick2P2() }"
+                android:text='@{"2 x " + Integer.toString(vm.count2P2)}'
+                app:layout_constraintEnd_toStartOf="@+id/button2P3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button2P1"
+                app:layout_constraintTop_toBottomOf="@+id/editTextP2" />
+
+            <Button
+                android:id="@+id/button2P3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick2P3() }"
+                android:text='@{"2 x " + Integer.toString(vm.count2P3)}'
+                app:layout_constraintEnd_toStartOf="@+id/button2P4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button2P2"
+                app:layout_constraintTop_toBottomOf="@+id/editTextP3" />
+
+            <Button
+                android:id="@+id/button2P4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick2P4() }"
+                android:text='@{"2 x " + Integer.toString(vm.count2P4)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button2P3"
+                app:layout_constraintTop_toBottomOf="@+id/editTextP4" />
+
+            <!-- Button 3 -->
+
+            <Button
+                android:id="@+id/button3P1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick3P1() }"
+                android:text='@{"3 x " + Integer.toString(vm.count3P1)}'
+                app:layout_constraintEnd_toStartOf="@+id/button3P2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button2P1" />
+
+            <Button
+                android:id="@+id/button3P2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick3P2() }"
+                android:text='@{"3 x " + Integer.toString(vm.count3P2)}'
+                app:layout_constraintEnd_toStartOf="@+id/button3P3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button3P1"
+                app:layout_constraintTop_toBottomOf="@id/button2P2" />
+
+            <Button
+                android:id="@+id/button3P3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick3P3() }"
+                android:text='@{"3 x " + Integer.toString(vm.count3P3)}'
+                app:layout_constraintEnd_toStartOf="@+id/button3P4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button3P2"
+                app:layout_constraintTop_toBottomOf="@id/button2P3" />
+
+            <Button
+                android:id="@+id/button3P4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick3P4() }"
+                android:text='@{"3 x " + Integer.toString(vm.count3P4)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button3P3"
+                app:layout_constraintTop_toBottomOf="@id/button2P4" />
+
+            <!-- Button 4 -->
+
+            <Button
+                android:id="@+id/button4P1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick4P1() }"
+                android:text='@{"4 x " + Integer.toString(vm.count4P1)}'
+                app:layout_constraintEnd_toStartOf="@+id/button4P2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button3P1" />
+
+            <Button
+                android:id="@+id/button4P2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick4P2() }"
+                android:text='@{"4 x " + Integer.toString(vm.count4P2)}'
+                app:layout_constraintEnd_toStartOf="@+id/button4P3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button4P1"
+                app:layout_constraintTop_toBottomOf="@+id/button3P2" />
+
+            <Button
+                android:id="@+id/button4P3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick4P3() }"
+                android:text='@{"4 x " + Integer.toString(vm.count4P3)}'
+                app:layout_constraintEnd_toStartOf="@+id/button4P4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button4P2"
+                app:layout_constraintTop_toBottomOf="@+id/button3P3" />
+
+            <Button
+                android:id="@+id/button4P4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick4P4() }"
+                android:text='@{"4 x " + Integer.toString(vm.count4P4)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button4P3"
+                app:layout_constraintTop_toBottomOf="@+id/button3P4" />
+
+            <!-- Button 7 -->
+
+            <Button
+                android:id="@+id/button7P1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick7P1() }"
+                android:text='@{"7 x " + Integer.toString(vm.count7P1)}'
+                app:layout_constraintEnd_toStartOf="@+id/button7P2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button4P1" />
+
+            <Button
+                android:id="@+id/button7P2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick7P2() }"
+                android:text='@{"7 x " + Integer.toString(vm.count7P2)}'
+                app:layout_constraintEnd_toStartOf="@+id/button7P3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button7P1"
+                app:layout_constraintTop_toBottomOf="@+id/button4P2" />
+
+            <Button
+                android:id="@+id/button7P3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick7P3() }"
+                android:text='@{"7 x " + Integer.toString(vm.count7P3)}'
+                app:layout_constraintEnd_toStartOf="@+id/button7P4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button7P2"
+                app:layout_constraintTop_toBottomOf="@+id/button4P3" />
+
+            <Button
+                android:id="@+id/button7P4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick7P4() }"
+                android:text='@{"7 x " + Integer.toString(vm.count7P4)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button7P3"
+                app:layout_constraintTop_toBottomOf="@+id/button4P4" />
+
+            <!-- Button 8 -->
+
+            <Button
+                android:id="@+id/button8P1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick8P1() }"
+                android:text='@{"8 x " + Integer.toString(vm.count8P1)}'
+                app:layout_constraintEnd_toStartOf="@+id/button8P2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button7P1" />
+
+            <Button
+                android:id="@+id/button8P2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick8P2() }"
+                android:text='@{"8 x " + Integer.toString(vm.count8P2)}'
+                app:layout_constraintEnd_toStartOf="@+id/button8P3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button8P1"
+                app:layout_constraintTop_toBottomOf="@+id/button7P2" />
+
+            <Button
+                android:id="@+id/button8P3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick8P3() }"
+                android:text='@{"8 x " + Integer.toString(vm.count8P3)}'
+                app:layout_constraintEnd_toStartOf="@+id/button8P4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button8P2"
+                app:layout_constraintTop_toBottomOf="@+id/button7P3" />
+
+            <Button
+                android:id="@+id/button8P4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick8P4() }"
+                android:text='@{"8 x " + Integer.toString(vm.count8P4)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button8P3"
+                app:layout_constraintTop_toBottomOf="@+id/button7P4" />
+
+            <!-- Button 14 -->
+
+            <Button
+                android:id="@+id/button14P1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick14P1() }"
+                android:text='@{"14 x " + Integer.toString(vm.count14P1)}'
+                app:layout_constraintEnd_toStartOf="@+id/button14P2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button8P1" />
+
+            <Button
+                android:id="@+id/button14P2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick14P2() }"
+                android:text='@{"14 x " + Integer.toString(vm.count14P2)}'
+                app:layout_constraintEnd_toStartOf="@+id/button14P3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button14P1"
+                app:layout_constraintTop_toBottomOf="@+id/button8P2" />
+
+            <Button
+                android:id="@+id/button14P3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick14P3() }"
+                android:text='@{"14 x " + Integer.toString(vm.count14P3)}'
+                app:layout_constraintEnd_toStartOf="@+id/button14P4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button14P2"
+                app:layout_constraintTop_toBottomOf="@+id/button8P3" />
+
+            <Button
+                android:id="@+id/button14P4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick14P4() }"
+                android:text='@{"14 x " + Integer.toString(vm.count14P4)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button14P3"
+                app:layout_constraintTop_toBottomOf="@+id/button8P4" />
+
+            <!-- Button 15 -->
+
+            <Button
+                android:id="@+id/button15P1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick15P1() }"
+                android:text='@{"15 x " + Integer.toString(vm.count15P1)}'
+                app:layout_constraintEnd_toStartOf="@+id/button15P2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button14P1" />
+
+            <Button
+                android:id="@+id/button15P2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick15P2() }"
+                android:text='@{"15 x " + Integer.toString(vm.count15P2)}'
+                app:layout_constraintEnd_toStartOf="@+id/button15P3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button15P1"
+                app:layout_constraintTop_toBottomOf="@+id/button14P2" />
+
+            <Button
+                android:id="@+id/button15P3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick15P3() }"
+                android:text='@{"15 x " + Integer.toString(vm.count15P3)}'
+                app:layout_constraintEnd_toStartOf="@+id/button15P4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button15P2"
+                app:layout_constraintTop_toBottomOf="@+id/button14P3" />
+
+            <Button
+                android:id="@+id/button15P4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondary"
+                android:onClick="@{() -> vm.onClick15P4() }"
+                android:text='@{"15 x " + Integer.toString(vm.count15P4)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button15P3"
+                app:layout_constraintTop_toBottomOf="@+id/button14P4" />
+
+            <!-- Button Clear -->
+
+            <Button
+                android:id="@+id/buttonClearP1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:onClick="@{() -> vm.onClickClearP1()}"
+                android:text="@string/clear"
+                app:layout_constraintEnd_toStartOf="@+id/buttonClearP2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button15P1" />
+
+            <Button
+                android:id="@+id/buttonClearP2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:onClick="@{() -> vm.onClickClearP2()}"
+                android:text="@string/clear"
+                app:layout_constraintEnd_toStartOf="@+id/buttonClearP3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonClearP1"
+                app:layout_constraintTop_toBottomOf="@+id/button15P2" />
+
+            <Button
+                android:id="@+id/buttonClearP3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:onClick="@{() -> vm.onClickClearP3()}"
+                android:text="@string/clear"
+                app:layout_constraintEnd_toStartOf="@+id/buttonClearP4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonClearP2"
+                app:layout_constraintTop_toBottomOf="@+id/button15P3" />
+
+            <Button
+                android:id="@+id/buttonClearP4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:backgroundTint="?attr/colorSecondaryVariant"
+                android:onClick="@{() -> vm.onClickClearP4()}"
+                android:text="@string/clear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonClearP3"
+                app:layout_constraintTop_toBottomOf="@+id/button15P4" />
+
+
+            <!-- Summary -->
+
+            <TextView
+                android:id="@+id/textSumP1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:gravity="center"
+                android:hint="@string/_0"
+                android:text="@{Integer.toString(vm.totalP1)}"
+                android:textSize="@dimen/text_size_sum"
+                app:layout_constraintEnd_toStartOf="@+id/textSumP2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonClearP1" />
+
+            <TextView
+                android:id="@+id/textSumP2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:gravity="center"
+                android:hint="@string/_0"
+                android:text="@{Integer.toString(vm.totalP2)}"
+                android:textSize="@dimen/text_size_sum"
+                app:layout_constraintEnd_toStartOf="@+id/textSumP3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textSumP1"
+                app:layout_constraintTop_toBottomOf="@+id/buttonClearP2" />
+
+            <TextView
+                android:id="@+id/textSumP3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:gravity="center"
+                android:hint="@string/_0"
+                android:text="@{Integer.toString(vm.totalP3)}"
+                android:textSize="@dimen/text_size_sum"
+                app:layout_constraintEnd_toStartOf="@+id/textSumP4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textSumP2"
+                app:layout_constraintTop_toBottomOf="@+id/buttonClearP3" />
+
+            <TextView
+                android:id="@+id/textSumP4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:gravity="center"
+                android:hint="@string/_0"
+                android:text="@{Integer.toString(vm.totalP4)}"
+                android:textSize="@dimen/text_size_sum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textSumP3"
+                app:layout_constraintTop_toBottomOf="@+id/buttonClearP4" />
+
+            <!-- Save -->
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_size"
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textSumP1"
+                app:layout_constraintWidth_percent="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

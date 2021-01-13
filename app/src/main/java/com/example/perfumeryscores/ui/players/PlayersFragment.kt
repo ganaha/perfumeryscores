@@ -1,4 +1,4 @@
-package com.example.perfumeryscores.ui.dashboard
+package com.example.perfumeryscores.ui.players
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,20 +9,20 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.perfumeryscores.R
 
-class DashboardFragment : Fragment() {
+class PlayersFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var playersViewModel: PlayersViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, {
+        playersViewModel =
+            ViewModelProvider(this).get(PlayersViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_players, container, false)
+        val textView: TextView = root.findViewById(R.id.text_players)
+        playersViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root
