@@ -36,4 +36,6 @@ class AppRepository(private val dao: AppDao) {
             history
         }
     }
+
+    val playerInfos: Flow<List<PlayerInfo>> = dao.getPlayerInfos()
 }
